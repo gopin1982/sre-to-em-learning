@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: case-api
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,mappings
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    endpoints:
+      - "GET /hello"
+      - "GET /day1/collections/count"
+      - "GET /day1/strategy/exponential"
+      - "GET /day1/circuitbreaker/simulate?failures=6"
